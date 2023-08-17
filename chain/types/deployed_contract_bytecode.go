@@ -37,4 +37,7 @@ type DeployedContractBytecode struct {
 
 	// RuntimeBytecode describes the bytecode which was deployed by the InitBytecode. This is expected to be non-nil.
 	RuntimeBytecode []byte
+
+	// Dynamic
+	Dynamic bool
 }
