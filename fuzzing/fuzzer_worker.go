@@ -166,6 +166,10 @@ func (fw *FuzzerWorker) onChainContractDeploymentAddedEvent(event chain.Contract
 		}
 	}
 
+	// Stop testing of dynamic deployments
+	if event.Contract.Dynamic {
+		return nil
+	}
 	// Set our deployed contract address in our deployed contract lookup, so we can reference it later.
 	fw.deployedContracts[event.Contract.Address] = matchedDefinition
 
